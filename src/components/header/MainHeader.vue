@@ -2,7 +2,7 @@
   <el-row id="header-container">
     <el-col id="fav" :span="4">
       <img src="../../../public/logo.png" alt="站点图"/>
-      <span>{{ favTitle }}</span>
+      <span>{{ siteTitle }}</span>
     </el-col>
     <el-col id="nav" :span="10">
       <span class="nav-item" v-for="item of navItems" :key="item.id">
@@ -42,7 +42,7 @@
 export default {
   name: 'MainHeader',
   props: {
-    favTitle: String,
+    siteTitle: String,
     navItems: Array,
   },
 };

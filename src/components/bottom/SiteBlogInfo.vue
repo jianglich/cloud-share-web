@@ -1,6 +1,6 @@
 <template>
   <div id="site-blog-info">
-    {{ siteInfo }}
+    {{ siteCopyright }}
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
   name: 'SiteBlogInfo',
   props: {
-    siteInfo: String,
+    siteCopyright: String,
   },
 };
 </script>

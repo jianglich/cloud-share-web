@@ -1,0 +1,15 @@
+{
+  'desc': 'Success',
+  'error': 0,
+  'data|2': [{
+    'id': '@guid()', // 得到随机的id,对象
+    'title': '@ctitle(15)',
+    'category|1': ['影视', '图片', '软件', '游戏', '音乐', '动漫', '书籍', '学习', '求助', '其他'],
+    'comment': '@integer(0, 100000)',
+    'username': '@cname()', // 随机生成中文名字
+    'date': '@date()', // 随机生成日期
+    'avatar': '@image(\'200x200\',\'red\',\'#fff\',\'avatar\')', // 生成图片,参数:size, background, foreground, text
+    'description': '@cparagraph(50)', // 描述
+    'email': '@email()', // email
+  }]
+}
