@@ -6,9 +6,11 @@
     </el-col>
     <el-col id="nav" :span="10">
       <span class="nav-item" v-for="item of navItems" :key="item.id">
-        <span class="item-title">
-          {{ item.title }}
-        </span>
+        <router-link :to="item.routerLink">
+          <span class="item-title">
+            {{ item.title }}
+          </span>
+        </router-link>
       </span>
     </el-col>
     <el-col id="site" :span="10">
@@ -41,9 +43,22 @@
 <script>
 export default {
   name: 'MainHeader',
+  data() {
+    return {
+      state: undefined,
+    };
+  },
   props: {
     siteTitle: String,
     navItems: Array,
+  },
+  methods: {
+    querySearch() {
+
+    },
+    handleSelect() {
+
+    },
   },
 };
 </script>
@@ -82,7 +97,11 @@ export default {
         top: 5px;
         width: 15%;
         height: 100%;
+        a {
+          text-decoration: none;
+        }
         .item-title {
+          color: #86909c;
           cursor: pointer;
         }
       }

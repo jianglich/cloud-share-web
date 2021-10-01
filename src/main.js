@@ -2,7 +2,7 @@ import { createApp } from 'vue';
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
 import {
-  Reading, BellFilled, Comment, Paperclip, Calendar,
+  Reading, BellFilled, Comment, Paperclip, Calendar, MoreFilled,
 } from '@element-plus/icons';
 
 import App from './App.vue';
@@ -19,5 +19,6 @@ app.component('bellFilled', BellFilled);
 app.component('comment', Comment);
 app.component('paperclip', Paperclip);
 app.component('calendar', Calendar);
+app.component('moreFilled', MoreFilled);
 
 app.mount('#app');

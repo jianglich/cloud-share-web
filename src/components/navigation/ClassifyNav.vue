@@ -1,26 +1,27 @@
 <template>
   <div id="classify-nav">
     <el-row id="publish">
-      <el-button style="width: 200px;" type="primary" plain>{{ publishTitle }}</el-button>
+      <div class="button">
+        <el-button style="width: 200px;" type="primary" plain>{{ publishTitle }}</el-button>
+      </div>
     </el-row>
 
-    <el-row id="subjects">
-      <span class="subject" v-for="subject in subjects" :key="subject.id">
-        <reading style="width: 1em; height: 1em; margin-right: 8px;"/>
-        <span class="subject-title">
-          {{ subject.title }}
-        </span>
-      </span>
+    <el-row id="info">
+      <div class="content">
+
+      </div>
     </el-row>
 
     <el-row id="categories">
-      <div class="category" v-for="category in categories" :key="category.id">
+      <div class="cate-content">
+        <div class="category" v-for="category in categories" :key="category.id">
         <span class="cate-back">
           <img class="category-img" :src="category.imgUri" alt="分类图片"/>
           <span>
             {{ category.title }}
           </span>
         </span>
+        </div>
       </div>
     </el-row>
 
@@ -51,51 +52,65 @@ export default {
 
 <style scoped lang="less">
 #classify-nav {
-  margin-top: 30px;
   position: fixed;
   #publish {
-    left: 60px;
-  }
-  #subjects {
-    text-align: center;
-    padding-top: 20px;
-    left: 25px;
-    .subject {
-      padding-top: 30px;
-      font-size: 17px;
+    border: solid 1px #E8ECF3;
+    .button {
       display: inline-block;
-      width: 100px;
-      cursor: pointer;
-      margin: 0 15px;
-      .subject-title {
-        position: relative;
-        top: -3px;
-      }
+      width: 360px;
+      height: 56px;
+      padding-top: 15px;
+      background-color: white;
+    }
+  }
+
+  #info {
+    margin-top: 27px;
+    border: solid 1px #E8ECF3;
+    .content {
+      display: inline-block;
+      width: 360px;
+      height: 160px;
+      background-color: white;
     }
   }
 
   #categories {
-    .category {
-      display: block;
-      width: 100%;
-      text-align: left;
-      margin-left: 60px;
-      margin-top: 20px;
-      line-height: 40px;
-      cursor: pointer;
-      .cate-back {
+    border: solid 1px #E8ECF3;
+    margin-top: 20px;
+    .cate-content {
+      width: 360px;
+      background-color: white;
+      padding: 40px 0;
+      .category {
+        width: 90%;
         display: inline-block;
-        padding: 10px 30px;
-        width: 200px;
+        text-align: left;
+        margin-left: 30px;
+        line-height: 40px;
+        position: relative;
+        left: -10px;
+        color: #86909c;
         background-color: white;
-        border-radius: 8px;
-        border: solid 1px #E8ECF3;
-        .category-img {
-          margin-right: 20px;
-          width: 25px;
-          height: 25px;
-          position: relative;
-          top: 5px;
+        :hover {
+          color: #1d2129;
+          background-color: #ECF5FF;
+        }
+        .cate-back {
+          display: inline-block;
+          font-size: 19px;
+          font-weight: 600;
+          padding: 10px 0 10px 70px;
+          width: 250px;
+          cursor: pointer;
+          text-align: left;
+          .category-img {
+            margin-right: 30px;
+            width: 25px;
+            height: 25px;
+            position: relative;
+            top: 5px;
+          }
         }
       }
     }
@@ -105,10 +120,14 @@ export default {
     font-size: 15px;
     font-weight: bold;
     display: inline-block;
-    width: 200px;
-    text-align: left;
-    margin-left: 60px;
-    margin-top: 60px;
+    width: 360px;
+    height: 60px;
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 15px;
+    color: #86909C;
+    background-color: white;
   }
 }
 </style>
